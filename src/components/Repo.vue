@@ -1,20 +1,16 @@
 <template>
-  <div class="container repo-list">
+  <div class="container-fluid repo-list">
     <hr />
     <div>
       <h4>
-        <a href="#">{{ repo.name }}</a>
+        <a @click="$emit('toggle', rep.owner.login, rep.name)" href="#">{{ rep.name }}</a>
       </h4>
-      <h5>{{ repo.description }}</h5>
+      <h5>{{ rep.description }}</h5>
       <div class="container row infos">
-        <span class="material-icons">
-          grade
-        </span>
-        <h6 id="stars">{{ repo.stargazers_count }}</h6>
-        <span class="material-icons" id="circle">
-          fiber_manual_record
-        </span>
-        <h6>{{ repo.language }}</h6>
+        <span class="material-icons">grade</span>
+        <h6 id="stars">{{ rep.stargazers_count }}</h6>
+        <span class="material-icons" id="circle">fiber_manual_record</span>
+        <h6>{{ rep.language }}</h6>
       </div>
     </div>
   </div>
@@ -45,8 +41,7 @@ h5 {
 </style>
 
 <script>
-
 export default {
-  props: ["repo"],
+  props: ["rep"]
 };
 </script>
