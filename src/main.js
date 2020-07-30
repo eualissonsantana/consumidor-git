@@ -1,23 +1,16 @@
 import Vue from 'vue'
-import VueRouter from 'vue'
 import App from './App.vue'
+import {BootstrapVue, IconsPlugin} from 'bootstrap-vue'
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap-vue/dist/bootstrap-vue.css'
+import './plugins/axios.js'
+
 
 Vue.config.productionTip = false
-
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
-
-const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
-]
-
-const router = new VueRouter({
-  routes // short for `routes: routes`
-})
+Vue.use(BootstrapVue)
+Vue.use(IconsPlugin)
 
 
 new Vue({
   render: h => h(App),
-  router
 }).$mount('#app')
